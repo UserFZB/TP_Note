@@ -1,13 +1,17 @@
 package app;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import app.exception.ActionNonAutoriseeException;
 import app.role_habilitation.Habilitation;
 import app.role_habilitation.Rôle;
 import app.webhook.Webhook;
+import zoo.Zoo;
 
 public class Canal implements Comparable, Destinataire{
 	
@@ -29,9 +33,21 @@ public class Canal implements Comparable, Destinataire{
 		
 	}
 	
-	public void ecrireMessage(Utilisateur utilisateur, Message message)
+	public void ecrireMessage(Utilisateur utilisateur, Message message) throws ActionNonAutoriseeException
 	{
-		historiques.add(message);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Rôle r = new Rôle("member");
+		Utilisateur ut = mapping_role_utilisateurs.get(r).stream().filter(u -> u.equals(utilisateur)).findFirst().orElse(null);
+		if(ut != null)
+		{
+			historiques.add(message);
+		}else
+		{
+			throw new ActionNonAutoriseeException();
+		}
+			
+
+				
 	}
 
 

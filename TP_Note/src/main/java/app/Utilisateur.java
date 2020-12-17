@@ -17,4 +17,12 @@ public class Utilisateur {
 		
 	}
 
+	public List<ServeurDiscussion> getServeurs() {
+		return serveurs;
+	}
+
+	public void setServeurs(List<ServeurDiscussion> serveurs) {
+		this.serveurs = serveurs;
+	}
+
 }

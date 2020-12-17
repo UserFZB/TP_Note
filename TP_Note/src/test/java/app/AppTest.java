@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.junit.Assert;
 import org.junit.Test;

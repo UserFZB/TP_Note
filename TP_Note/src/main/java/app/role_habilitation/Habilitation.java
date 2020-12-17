@@ -8,10 +8,7 @@ public enum Habilitation {
 	SUPPRESSION,
 	DROIT_INVITATION;
 	
-	/*public Habilitation[] values()
-	{		
-		return Habilitation.values();
-	}*/
+	
 	
 
 }
