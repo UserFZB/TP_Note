@@ -30,7 +30,7 @@ public class AppTest {
         m.setTexte("Bonne fêtes de fin d'année !");
 
         Utilisateur utilisateur = new Utilisateur();
-        c.getMapping_role_utilisateurs().put(new Rôle("Membre"), Arrays.asList(utilisateur));
+        c.getMapping_role_utilisateurs()).put(new Rôle("Membre"), Arrays.asList(utilisateur));
         c.getMapping_role_habilitations().put(new Rôle("Membre"), Arrays.asList(Habilitation.ECRITURE));
 
         // Etape 2 : appel de la méthode testée
